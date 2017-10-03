@@ -31,6 +31,8 @@ function totalCompany(list) {
 function companyByLocation(list) {
     var countryCode = [];
     var result = {};
+    var resultLength = 0;
+    var summResult;
 
     list.forEach(function (item, i, arr) {
         countryCode[i] = item.location.code;
@@ -42,8 +44,24 @@ function companyByLocation(list) {
             ++result[a];
         } else {
             result[a] = 1;
+            resultLength++;
         }
     }
-
-
+    $('#locationCompany .panel-body').html("<ul class='location-info'></ul>");
+    for (var x in result) {
+        summResult += result[x];
+        $('#locationCompany .panel-body .location-info').append("<li>" + x + " its " +result[x] + " </li>");
+    }
+    console.log(resultLength);
+    console.log(summResult);
 }
+
+
+
+
+
+
+
+
+
+
