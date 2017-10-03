@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="message">
+            <div class="alert alert-success page-alert">
+                <p>qwe</p>
+            </div>
+
+            <div class="alert alert-danger page-alert">
+                <p>qwe</p>
+            </div>
+        </div>
+
+        <form name="register" id="regForm">
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="text" class="form-control" name="name" placeholder="Username">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="text" class="form-control" name="secondname" placeholder="Secondname">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="email" class="form-control" name="email" placeholder="Email">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <select id="genderVisible">
+                <option value="">gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+                    <input type="hidden" name="gender" id="gender">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="text" class="form-control" name="pass" placeholder="Password">
+                </div>
+            </div>
+
+            <div class="row">
+                <input type="checkbox" id="agreeVisible">
+                <lable for="agree1">С условиями ознакомлен</lable>
+                <input type="hidden" id="agree" name="agree">
+            </div>
+
+            <div class="row">
+                <button type="button" id="submitForm" class="btn btn-default">
+        Submit
+        </button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
