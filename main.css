@@ -77,3 +77,14 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.company-all {
+    font-size: 40px;
+    font-weight: 700;
+    border: 4px solid #d9edf7;
+    border-radius: 100%;
+    padding: 20px;
+    color: #31708f;
+    width: 110px;
+    text-align: center;
+}
