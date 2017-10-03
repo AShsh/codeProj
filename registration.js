@@ -1,11 +1,10 @@
 $(function () {
-
     /*events*/
     $("#submitForm").on("click", function () {
         validateForm();
     });
 
-    $('input').on("keyup", function(){
+    $('input').on("keyup", function () {
         $('.js-end-validate').hide();
         $('.alert').removeClass('js-end-validate');
     });
@@ -13,7 +12,7 @@ $(function () {
 });
 
 var validate = [
-    {
+        {
         "message": "Field 'name' should contain from 6 to 60 letters",
         "field": "name",
         pattern: /^[a-z0-9_-]{6,60}$/
@@ -29,18 +28,16 @@ var validate = [
         "message": "Field 'gender' is required",
         "field": "gender",
         pattern: /male|female/
-        },
-        {
+        }, {
         "message": "Field 'password' should contain from 3 to 60 letters",
         "field": "pass",
         pattern: /^[a-z0-9_-]{3,60}$/
-        },
-        {
+        }, {
         "message": "Please agree",
         "field": "agree",
         pattern: /true/
         }
-    ]
+]
 
 function validateForm() {
     $('#gender').val($('#genderVisible').val());
@@ -73,9 +70,9 @@ function validateForm() {
                 data: $("#regForm").serialize(),
                 success: function (data) {
                     if (data.status == 'Error') {
-                       $('.alert-danger').text(data.message);
-                       $('.alert-danger').addClass('js-end-validate');
-                       $('.alert-danger').show();
+                        $('.alert-danger').text(data.message);
+                        $('.alert-danger').addClass('js-end-validate');
+                        $('.alert-danger').show();
                     } else {
                         window.location = "company.html";
                     }
@@ -87,5 +84,4 @@ function validateForm() {
             });
         }
     }
-
 }

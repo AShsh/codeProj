@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-</head>
-<body>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 
+    <script src="company.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="alert alert-danger global-alert text-center">
+        </div>
+        <div class="row margin-bottom">
+            <div class="col-xs-6 col-panel">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Total companies</div>
+                    <div class="panel-body">
+                        <img src="loader.svg" class="loader">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-panel">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">List of companies</div>
+                    <div class="panel-body">
+                        <img src="loader.svg" class="loader">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-bottom">
+            <div class="col-xs-6 col-panel">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Companies by location</div>
+                    <div class="panel-body">
+                        <img src="loader.svg" class="loader">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-panel">
+                <div class="panel panel-default">
+                    <div class="panel-heading">News</div>
+                    <div class="panel-body">
+                        <img src="loader.svg" class="loader">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

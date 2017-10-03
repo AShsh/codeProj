@@ -8,77 +8,91 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+    <script src="registration.js"></script>
 </head>
 
 <body>
 
     <div class="container">
-        <div class="message">
-            <div class="alert alert-success page-alert">
-                <p>qwe</p>
-            </div>
+        <div class="panel panel-default registration">
+            <div class="panel-heading">Sign In</div>
+            <div class="panel-body">
+                <div class="message">
+                    <div class="alert alert-success page-alert">
+                        <p>qwe</p>
+                    </div>
 
-            <div class="alert alert-danger page-alert">
-                <p>qwe</p>
+                    <div class="alert alert-danger page-alert">
+                        <p>qwe</p>
+                    </div>
+                </div>
+
+                <form id="regForm">
+                    <div class="row-inner margin-bottom">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            <input type="text" class="form-control" name="name" placeholder="Username">
+                        </div>
+                    </div>
+
+                    <div class="row-inner margin-bottom">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            <input type="text" class="form-control" name="secondname" placeholder="Secondname">
+                        </div>
+                    </div>
+
+                    <div class="row-inner margin-bottom">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                            <input type="email" class="form-control" name="email" placeholder="Email">
+                        </div>
+                    </div>
+
+                    <div class="row-inner margin-bottom">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            <select id="genderVisible" class="selectpicker">
+                                <option value="">gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                            <input type="hidden" name="gender" id="gender">
+                        </div>
+                    </div>
+
+                    <div class="row-inner margin-bottom">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                            <input type="text" class="form-control" name="pass" placeholder="Password">
+                        </div>
+                    </div>
+
+                    <div class="row-inner margin-bottom">
+                    <div class="checkbox">
+                    <label>
+                        <input type="hidden" id="agree" name="agree">
+                        <input type="checkbox" id="agreeVisible" class="checkbox">
+                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                        С условиями ознакомлен
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="row-inner">
+                        <button type="button" id="submitForm" class="btn btn-default pull-right">
+                            Submit
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
 
-        <form name="register" id="regForm">
-            <div class="row">
-                <div class="input-group">
-                    <span class="input-group-addon">@</span>
-                    <input type="text" class="form-control" name="name" placeholder="Username">
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="input-group">
-                    <span class="input-group-addon">@</span>
-                    <input type="text" class="form-control" name="secondname" placeholder="Secondname">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="input-group">
-                    <span class="input-group-addon">@</span>
-                    <input type="email" class="form-control" name="email" placeholder="Email">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="input-group">
-                    <span class="input-group-addon">@</span>
-                    <select id="genderVisible">
-                <option value="">gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
-                    <input type="hidden" name="gender" id="gender">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="input-group">
-                    <span class="input-group-addon">@</span>
-                    <input type="text" class="form-control" name="pass" placeholder="Password">
-                </div>
-            </div>
-
-            <div class="row">
-                <input type="checkbox" id="agreeVisible">
-                <lable for="agree1">С условиями ознакомлен</lable>
-                <input type="hidden" id="agree" name="agree">
-            </div>
-
-            <div class="row">
-                <button type="button" id="submitForm" class="btn btn-default">
-        Submit
-        </button>
-            </div>
-        </form>
     </div>
-
 </body>
 
 </html>
