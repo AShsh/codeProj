@@ -1,4 +1,5 @@
 $(function () {
+
     var globalData;
     $.ajax({
         type: "POST",
@@ -25,17 +26,17 @@ function callback(list) {
 }
 
 function totalCompany(list) {
-    $('#totalCompany .panel-body').html('<p class="company-all">' + (list.length - 1) + '</p>');
+    $('#totalCompany .panel-body').html('<p class="company-all">' + (list.length) + '</p>');
 }
 
 function companyByLocation(list) {
     var countryCode = [];
     var result = {};
-    var resultLength = 0;
-    var summResult;
+    var summResult = 0;
+    var newResult = [];
 
     list.forEach(function (item, i, arr) {
-        countryCode[i] = item.location.code;
+        countryCode[i] = item.location.name;
     });
 
     for (var i = 0; i < countryCode.length; ++i) {
@@ -44,24 +45,67 @@ function companyByLocation(list) {
             ++result[a];
         } else {
             result[a] = 1;
-            resultLength++;
         }
     }
-    $('#locationCompany .panel-body').html("<ul class='location-info'></ul>");
+    for (key in result) {
+        newResult.push({
+            name: key,
+            y: result[key]
+
+        });
+    }
+
+
+    $('#locationCompany .panel-body').html('<div id="container">');
     for (var x in result) {
         summResult += result[x];
-        $('#locationCompany .panel-body .location-info').append("<li>" + x + " its " +result[x] + " </li>");
     }
-    console.log(resultLength);
-    console.log(summResult);
+
+    for (var y in result) {
+        $('#locationCompany .panel-body .location-info').append("<li>" + y + " its " + result[y] * 100 / summResult + "% </li>");
+    }
+    createCircle(newResult);
 }
 
 
+function createCircle(res) {
+    var data = [];
+    for (var i = 0; i < res.length; i++) {
+        data[i] = {
+            name: res,
+            y: res
+        };
+    }
 
+    Highcharts.chart('container', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ''
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage}%'
+                }
+            }
+        },
+        series: [
+            {
+                name: 'Brands',
+                colorByPoint: true,
+                data: res
 
-
-
-
-
-
-
+            }]
+    });
+}
